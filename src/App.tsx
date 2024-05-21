@@ -3,7 +3,6 @@ import React from 'react'
 import { ThemeProviders } from './presentation/theme/ThemeProviders';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { StackNavigator } from './presentation/navigator/StackNavigator';
-import { NavigationContainer } from '@react-navigation/native';
 
 
 const queryClient = new QueryClient()

@@ -3,7 +3,7 @@ import { Album } from "../../infraestructure/Entities/Album"
 import { AlbumImage } from "./AlbumImage"
 
 interface Props {
-    albums: Album[]
+    albums: Album[] | undefined
 }
 export const ListOfAlbums = ({albums}:Props) => {
   return (

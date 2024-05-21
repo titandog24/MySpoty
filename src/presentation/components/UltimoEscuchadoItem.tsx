@@ -1,7 +1,5 @@
-import { Layout, Card, Text } from "@ui-kitten/components"
-import { useContext } from "react"
+import { Layout, Text } from "@ui-kitten/components"
 import { Image, StyleSheet } from "react-native"
-import { ThemeContext } from "../theme/ThemeProviders"
 import { Artist } from "../../infraestructure/Entities/Artist"
 
 interface Props {

@@ -7,15 +7,13 @@ import { useQuery } from '@tanstack/react-query';
 import { Layout, Text } from '@ui-kitten/components'
 import { useNavigation } from '@react-navigation/native'
 import { CommonActions } from '@react-navigation/native';
-import { useEffect } from 'react';
 import { Artist } from '../../infraestructure/Entities/Artist'
-import { getTempUser, removeTemp } from '../../infraestructure/Store/ArtistStoreLocal'
 import { useArtistStore } from '../../infraestructure/Store/ArtistStore'
 import { HeaderComponent } from '../components/HeaderComponent'
 
 
 export const HomeScreens = () => {
-    const [tempArtist] = useState<Artist[]>([])
+    const [tempArtist, setTempArtist] = useState<Artist[]>([])
     const { artistStore, gbSetArtist } = useArtistStore();
     const navigation = useNavigation();
 

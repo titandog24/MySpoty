@@ -1,7 +1,6 @@
 import { Layout, Text } from "@ui-kitten/components"
 import { Image, StyleSheet } from "react-native"
 import { LibraryEntity } from "../../infraestructure/Entities/Library"
-import { ThemeContext } from "../theme/ThemeProviders"
 import { colors } from "../theme/theme"
 
 interface Props {
@@ -9,10 +8,7 @@ interface Props {
 }
 
 export const LibraryItem = ({library}:Props) => {
-
-
     const color = colors;
-
 
     return (
         <Layout style={[styles.container, {backgroundColor:color.primary}]}>

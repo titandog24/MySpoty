@@ -37,24 +37,19 @@ export const getAllArtist = async () => {
 
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }
 
 export const getAllAlbumsByArtistId = async (id:number) => {
     
     try {
-        const {data, status} = await mySpoty.get<MySpotyArtist>(`/artist/getalbumofartistbyid/${id}`);
-
-        if (status > 299) {
-            return []
-        }
-     
+        const {data} = await mySpoty.get<MySpotyArtist>(`/artist/getalbumofartistbyid/${id}`);
         return ArtistMapper.ArtistMapperEntity(data);
         
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }
 
@@ -66,7 +61,7 @@ export const deleteUserById = async (id:number) => {
         return data
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }
 
@@ -78,7 +73,7 @@ export const updateArtist = async (artist:Artist) => {
         return data
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }
 
@@ -90,6 +85,6 @@ export const addNewArtist = async () => {
         return ArtistMapper.ArtistMapperEntity(data);
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }

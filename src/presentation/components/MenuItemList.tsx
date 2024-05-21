@@ -1,8 +1,6 @@
 import { Layout, Text } from "@ui-kitten/components"
 import { FlatList, ImageStyle, StyleSheet, ViewStyle } from "react-native"
 import { Items } from "./Items"
-import { useContext } from "react"
-import { ThemeContext } from "../theme/ThemeProviders"
 import { Artist } from "../../infraestructure/Entities/Artist"
 
 interface Props {

@@ -1,8 +1,6 @@
 import { Layout, List, Text } from '@ui-kitten/components'
 import { UltimoEscuchadoItem } from './UltimoEscuchadoItem'
 import { StyleSheet } from 'react-native'
-import { useContext } from 'react'
-import { ThemeContext } from '../theme/ThemeProviders'
 import { Artist } from '../../infraestructure/Entities/Artist';
 
 interface Props {

@@ -1,9 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { LoginScreen } from '../screen/LoginScreen';
 import { RegisterScreen } from '../screen/RegisterScreen';
-import { BottomTabNavigator } from './BottomTabNavigator';
 import { ArtistScreen } from '../screen/ArtistScreen';
-import { HomeScreens } from '../screen/HomeScreens';
 import { DrawerNavigator } from './DrawerNavigator';
 
 export type RootStackParams = {
