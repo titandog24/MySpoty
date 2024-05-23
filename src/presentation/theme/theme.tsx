@@ -6,15 +6,21 @@ export interface ThemeColors {
   background: string;
   cardBackground: string;
   buttonTextColor: string;
+  basic: string;
+  extra: string;
+  gold: string;
 }
 
 export const colors: ThemeColors = {
   primary: "#141D2C",
   text: "white",
 
-  background: "#F3F2F7",
+  background: "#141D2C",
   cardBackground: "white",
   buttonTextColor: "white",
+  basic: '#0d645a',
+  extra: '#015886',
+  gold: 'hsla(51, 100.00%, 50.00%, 0.86)'
 };
 
 export const lightColors: ThemeColors = {
@@ -24,6 +30,9 @@ export const lightColors: ThemeColors = {
   background: "rgb(242, 242, 242)",
   cardBackground: "#d3cdcd",
   buttonTextColor: "white",
+  basic: '#0d645a',
+  extra: '#015886',
+  gold: 'hsla(51, 100.00%, 50.00%, 0.86)'
 };
 
 export const darkColors: ThemeColors = {
@@ -33,6 +42,9 @@ export const darkColors: ThemeColors = {
   background: "#090909",
   cardBackground: "#2d2d2d",
   buttonTextColor: "white",
+  basic: '#0d645a',
+  extra: '#015886',
+  gold: 'hsla(51, 100.00%, 50.00%, 0.86)'
 };
 
 
@@ -68,11 +80,11 @@ export const globalStyles = StyleSheet.create({
     fontSize: 16,
   },
   input: {
-    height:40,
+    height: 40,
     margin: 20,
     borderWidth: 1,
     padding: 10,
-    borderColor:'rgba(0,0,0,0.3)',
+    borderColor: 'rgba(0,0,0,0.3)',
     // color: colors.text
   }
 });
