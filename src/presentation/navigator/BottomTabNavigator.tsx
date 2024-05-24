@@ -3,7 +3,7 @@ import { HomeScreens } from '../screen/HomeScreens';
 import { SearchScreen } from '../screen/SearchScreen';
 import { IonIcon } from '../components/IonIcons';
 import { PlanScreen } from '../screen/PlanScreen';
-import { BibliotecaScreen } from '../screen/BibliotecaScreen';
+import { LibraryScreen } from '../screen/LibraryScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ export const BottomTabNavigator = () => {
         }} />
       <Tab.Screen
         name="BibliotecaScreen"
-        component={BibliotecaScreen}
+        component={LibraryScreen}
         options={{
           title: 'Tu biblioteca',
           tabBarIcon: () => (

@@ -6,13 +6,12 @@ import { LibraryItem } from "../components/LibraryItem"
 import { HeaderComponent } from "../components/HeaderComponent"
 import { IonIcon } from "../components/IonIcons"
 import { ReactElement, useEffect, useState } from "react"
-import { LibraryEntity } from "../../infraestructure/Entities/Library"
+import { LibraryEntity } from '../../infraestructure/Entities/Library';
 import { StorageLocal } from "../../infraestructure/Config/StoreLocal"
+import { CommonActions, useNavigation } from "@react-navigation/native"
 
-export const BibliotecaScreen = () => {
-
-
-
+export const LibraryScreen = () => {
+  const navigation = useNavigation();
   const [modalVisible, SetModalVisible] = useState(false);
   const [library, setLibrary] = useState<LibraryEntity>({
     id: 0,
@@ -24,6 +23,8 @@ export const BibliotecaScreen = () => {
 
 
   const createNewPlayList = async (libraryModal: LibraryEntity) => {
+
+  
 
     const newLibrary: LibraryEntity = {
       id: 0,
@@ -44,6 +45,12 @@ export const BibliotecaScreen = () => {
     queryKey: ['library'],
     queryFn: getAll
   })
+
+  const goToPlayList = (lib:LibraryEntity) => {
+    navigation.dispatch({
+      ...CommonActions.navigate('PlayList', { library: lib })
+  });
+  }
 
   useEffect(() => {
     const loadUser = async () => {
@@ -67,7 +74,7 @@ export const BibliotecaScreen = () => {
         style={{ backgroundColor: '#141D2C' }}
         keyExtractor={(item) => `${item.id}`}
         numColumns={1}
-        renderItem={({ item, index }) => <LibraryItem key={index} library={item} />}
+        renderItem={({ item, index }) => <LibraryItem key={index} library={item} goToPlayList={goToPlayList}/>}
       />
       <Button
         appearance="primary"

@@ -9,6 +9,7 @@ interface Props {
 }
 
 export const TrackCard = ({ track }: Props) => {
+    
     return (
         <Layout style={styles.container}>
             <Layout style={{ flex: 1, flexDirection: 'row', height: 130, alignItems: 'center' }}>

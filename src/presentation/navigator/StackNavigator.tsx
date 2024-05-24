@@ -3,12 +3,17 @@ import { LoginScreen } from '../screen/LoginScreen';
 import { RegisterScreen } from '../screen/RegisterScreen';
 import { ArtistScreen } from '../screen/ArtistScreen';
 import { DrawerNavigator } from './DrawerNavigator';
+import { PlayListScreen } from '../screen/PlayListScreen';
+import { LibraryEntity } from '../../infraestructure/Entities/Library';
 
 export type RootStackParams = {
     Login: undefined,
     Register: undefined,
     Artist: { artistId: number },
-    Application: undefined
+    Application: undefined,
+    PlayList: {library: LibraryEntity},
+    
+
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -23,6 +28,7 @@ export const StackNavigator = () => {
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Artist" component={ArtistScreen} />
       <Stack.Screen name="Application" component={DrawerNavigator} />
+      <Stack.Screen name="PlayList" component={PlayListScreen} />
     </Stack.Navigator>
   )
 }

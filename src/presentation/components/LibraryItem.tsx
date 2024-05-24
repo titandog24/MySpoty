@@ -4,10 +4,11 @@ import { LibraryEntity } from "../../infraestructure/Entities/Library"
 import { colors } from "../theme/theme"
 
 interface Props {
-    library: LibraryEntity
+    library: LibraryEntity,
+    goToPlayList: (lib:LibraryEntity) => void
 }
 
-export const LibraryItem = ({library}:Props) => {
+export const LibraryItem = ({library, goToPlayList}:Props) => {
     const color = colors;
 
     return (
@@ -25,10 +26,14 @@ export const LibraryItem = ({library}:Props) => {
                 <Layout style={{flex:3, backgroundColor: color.primary}}>
                         <Layout style={{paddingTop: 10, paddingLeft: 20, backgroundColor: color.primary}}>
                             <Layout style={{backgroundColor: color.primary}}>
-                                <Text style={{fontSize:18, color: color.text }}>{library.name}</Text>
+                                <Text 
+                                style={{fontSize:18, color: color.text }}
+                                onPress={() => goToPlayList(library)}>{library.name}</Text>
                             </Layout>
                             <Layout style={{backgroundColor: color.primary}}>
-                                <Text style={{fontSize:12, color: color.text}}>Playlist - {library.counterSong} songs</Text>
+                                <Text 
+                                style={{fontSize:12, color: color.text}}
+                                onPress={() => goToPlayList(library)}>Playlist - {library.counterSong} songs</Text>
                             </Layout>
                         </Layout>
                 </Layout>

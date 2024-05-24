@@ -40,13 +40,34 @@ export const getAllTrackByArtistId = async (artistId: number) => {
 export const getAllTracksByAlbumId = async (idAlbum: number) => {
     
     try {
-        return;
+        const {data} = await mySpoty.get<MySpotyTrack[]>(`/track/getalltracksbyalbumid/${idAlbum}`);
+
+        const Tracks = data.map(track => TrackMapper.ConvertMySpotyTracktoTrackEntity(track));
+
+        return Tracks;
+
     } catch (error) {
         console.log(error);
-        throw new Error("Ocurrió un error al ");
+        return undefined
     }
 }
 
+
+
+export const getAllTracksByPlaylist = async (idPlaylist: number) => {
+    
+    try {
+        const {data} = await mySpoty.get<MySpotyTrack[]>(`/playlist/${idPlaylist}`);
+
+        const Tracks = data.map(track => TrackMapper.ConvertMySpotyTracktoTrackEntity(track));
+
+        return Tracks;
+
+    } catch (error) {
+        console.log(error);
+        return undefined
+    }
+}
 export const getAllTracksByAlbumName = async (album: Album, idArtist: number) => {
     
     try {
