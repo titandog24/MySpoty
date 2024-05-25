@@ -11,7 +11,7 @@ export const saveLoginUser = async (user: MySpotyUser): Promise<boolean> => {
         await StorageLocal.setData('user', JSON.stringify(user));
         return true;
     } catch (error) {
-        console.log(error);
+        
         return false;
     }
 }
@@ -26,7 +26,7 @@ export const existLoginUser = async (): Promise<boolean> => {
             return false;
         }
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }

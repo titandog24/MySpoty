@@ -8,7 +8,7 @@ export const getTracksByName = async () => {
     try {
         return;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -18,7 +18,7 @@ export const getTrackById = async () => {
     try {
         return;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -32,7 +32,7 @@ export const getAllTrackByArtistId = async (artistId: number) => {
 
         return Tracks;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -47,7 +47,7 @@ export const getAllTracksByAlbumId = async (idAlbum: number) => {
         return Tracks;
 
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
@@ -64,23 +64,21 @@ export const getAllTracksByPlaylist = async (idPlaylist: number) => {
         return Tracks;
 
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
-export const getAllTracksByAlbumName = async (album: Album, idArtist: number) => {
+export const saveFavoriteTrack = async () => {
     
     try {
         return;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
 
 export const getAllTracksByArtistName = async (name: string): Promise<Track[]> => {
-    console.log(name);
-    
     try {
         const {data} = await mySpoty.get<MySpotyTrack[]>(`/track/getalltrackbyartistname/${name}`);
 
@@ -88,8 +86,8 @@ export const getAllTracksByArtistName = async (name: string): Promise<Track[]> =
 
         return Tracks;
     } catch (error) {
-        console.log(error);
-        throw new Error("Ocurrió un error al ");
+        
+        return [];
     }
 }
 export const getAllTrack = async (): Promise<Track[]> => {
@@ -100,37 +98,26 @@ export const getAllTrack = async (): Promise<Track[]> => {
 
         return Tracks;
     } catch (error) {
-        console.log(error);
-        throw new Error("Ocurrió un error al ");
+        
+        return [];
     }
 }
 
-export const deleteTrackById = async (album: Album, idArtist: number) => {
-    
+export const saveTrackInPlayList = async (idLibrary: number, idTrack: number) => {
     try {
-        return;
-    } catch (error) {
-        console.log(error);
-        throw new Error("Ocurrió un error al ");
-    }
-}
 
-export const updateTrack = async (album: Album, idArtist: number) => {
-    
-    try {
-        return;
-    } catch (error) {
-        console.log(error);
-        throw new Error("Ocurrió un error al ");
-    }
-}
+        const params = {
+            idLibrary: idLibrary,
+            idTrack: idTrack
+        }
 
-export const addNewTrack = async (album: Album, idArtist: number) => {
-    
-    try {
-        return;
+        const {data} = await mySpoty.post<MySpotyTrack>(`/playlist`, params);
+
+        const playlist = TrackMapper.ConvertMySpotyTracktoTrackEntity(data);
+
+        return playlist;
     } catch (error) {
-        console.log(error);
-        throw new Error("Ocurrió un error al ");
+        
+        return undefined;
     }
 }

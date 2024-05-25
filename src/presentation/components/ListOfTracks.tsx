@@ -11,7 +11,7 @@ export const ListOfTracks = ({tracks}:Props) => {
         data={tracks}
         numColumns={1}
         keyExtractor={(item, index) => `${item.id}-${index}`}
-        renderItem={({item}) => <TrackCard key={item.id} track={item} />}
+        renderItem={({item}) => <TrackCard key={item.id} track={item} requireEventFav />}
         ListFooterComponent={() => <Layout style={{ height: 50 }} />}
         onEndReachedThreshold={0.5}
     />

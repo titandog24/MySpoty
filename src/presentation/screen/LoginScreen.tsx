@@ -46,9 +46,7 @@ export const LoginScreen = () => {
       const response = await existLoginUser();
       if (response) {
         navigation.navigate('Application');
-      } else {
-        console.log('no existe el usuario');  
-      } 
+      }
     }
  
     validateUserLogin();

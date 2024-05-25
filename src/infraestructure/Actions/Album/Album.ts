@@ -10,7 +10,7 @@ export const getAlbumByName = async (name:string) => {
         return AlbumMapper.AlbumMapperEntity(data);
 
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -22,7 +22,7 @@ export const getAlbumById = async (id:number) => {
 
         return AlbumMapper.AlbumMapperEntity(data);
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -34,7 +34,7 @@ export const deleteAlbumById = async (idAlbum: number) => {
 
         return data;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -46,7 +46,7 @@ export const updateAlbum = async (album: Album, idArtist: number) => {
 
         return data;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -58,7 +58,7 @@ export const addNewAlbum = async (album: Album, idArtist: number) => {
 
         return AlbumMapper.AlbumMapperEntity(data);
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }

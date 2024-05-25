@@ -11,7 +11,7 @@ export const getUserById = async (id: number): Promise<User> => {
 
         return UserMapper.UserMapperToEntity(data);
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -44,7 +44,7 @@ export const login = async (email: string, password:string): Promise<userFailed>
 
         return userFailed;
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }

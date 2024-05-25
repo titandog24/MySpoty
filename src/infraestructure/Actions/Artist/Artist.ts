@@ -10,7 +10,7 @@ export const getArtistByName = async (name: string) => {
         
         return ArtistMapper.ArtistMapperEntity(data);
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al obtener el artista");
     }
 }
@@ -23,7 +23,7 @@ export const getArtistById = async (id:number) => {
         return ArtistMapper.ArtistMapperEntity(data);
         
     } catch (error) {
-        console.log(error);
+        
         throw new Error("Ocurrió un error al ");
     }
 }
@@ -36,7 +36,7 @@ export const getAllArtist = async () => {
         return artistData.sort();
 
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
@@ -48,7 +48,7 @@ export const getAllAlbumsByArtistId = async (id:number) => {
         return ArtistMapper.ArtistMapperEntity(data);
         
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
@@ -60,7 +60,7 @@ export const deleteUserById = async (id:number) => {
 
         return data
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
@@ -72,7 +72,7 @@ export const updateArtist = async (artist:Artist) => {
 
         return data
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
@@ -84,7 +84,7 @@ export const addNewArtist = async () => {
 
         return ArtistMapper.ArtistMapperEntity(data);
     } catch (error) {
-        console.log(error);
+        
         return undefined
     }
 }
